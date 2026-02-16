@@ -25,7 +25,7 @@ public class DriverUtil {
             System.out.println("Delegate driver created: " + delegate.getClass().getName());
 
             driver = SelfHealingDriver.create(delegate);
-            System.out.println("SelfHealingDriver created and proxying delegate.");
+            System.out.println("DEBUG: Healenium Driver initialized!");
 
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             driver.manage().window().maximize();

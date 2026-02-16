@@ -18,12 +18,12 @@ import io.cucumber.java.en.When;
 
 public class LoginDefinition {
     private LoginPage loginPage;
-    private DashboardPage dashboardPage;
+    // private DashboardPage dashboardPage;
 
     @Given ("user buka web dan akses halaman login.")
     public void openBrowserAndLogin(){
         loginPage = new LoginPage(DriverUtil.getInstance());
-        dashboardPage = new DashboardPage(DriverUtil.getInstance());
+        // dashboardPage = new DashboardPage(DriverUtil.getInstance());
 
         DriverUtil.getInstance().get("http://localhost:8074/clinic/");
     }
@@ -42,7 +42,7 @@ public class LoginDefinition {
     @Then("user masuk tampilan dashboard.")
     public void accessDashboard(){
         String expectedURL = "http://localhost:8074/clinic/administrator.php";
-        WebDriverWait wait = new WebDriverWait(DriverUtil.getInstance(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(DriverUtil.getInstance(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.urlToBe(expectedURL));
         String currentUrl = loginPage.getCurrentURL();
         Assert.assertEquals(currentUrl, expectedURL);

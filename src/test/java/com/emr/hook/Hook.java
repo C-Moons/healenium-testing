@@ -23,7 +23,15 @@ public class Hook {
 
     @After
     public void tearDown(Scenario scenario) {
-        final byte[] screenshot = ((TakesScreenshot) DriverUtil.getDelegate()).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png", scenario.getName());
+        try {
+            org.openqa.selenium.WebDriver delegate = DriverUtil.getDelegate();
+            if (delegate instanceof org.openqa.selenium.TakesScreenshot) {
+                final byte[] screenshot = ((org.openqa.selenium.TakesScreenshot) delegate)
+                        .getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", "Screenshot: " + scenario.getName());
+            }
+        } catch (Exception e) {
+            System.err.println("Gagal mengambil screenshot: " + e.getMessage());
+        }
     }
 }

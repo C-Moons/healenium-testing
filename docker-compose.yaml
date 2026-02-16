@@ -1,0 +1,45 @@
+# version: '5.0'
+
+services:
+
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: hlm_user
+      POSTGRES_PASSWORD: hlm_password
+      POSTGRES_DB: hlm_db
+    ports:
+      - "5433:5432"
+
+    
+  hlm-backend:
+    image: healenium/hlm-backend:3.4.8
+    ports:
+      - "7878:7878"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hlm_db?currentSchema=public
+      - SPRING_DATASOURCE_USERNAME=hlm_user
+      - SPRING_DATASOURCE_PASSWORD=hlm_password
+      - SPRING_LIQUIBASE_DEFAULT_SCHEMA=public
+      - SEARCH_HOST=host.docker.internal
+    depends_on:
+      - postgres
+
+
+
+
+  # yolo-ultralytics:
+    # image: ultralytics/ultralytics:latest-cpu
+    # container_name: yolo_container
+    # ipc: host
+    # environment:
+    #   - DISPLAY=$DISPLAY
+    # volumes:
+    #   - .:/usr/src/app
+    #   - /tmp/.X11-unix:/tmp/.X11-unix
+
+    # privileged: true
+    # # devices:
+    #   # - /dev/video0:/dev/video0  # Ini buat konekin kamera
+    # tty: true
+    # stdin_open: true
