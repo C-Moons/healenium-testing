@@ -80,7 +80,7 @@ Dokumentasi detail terkait penggunaan, hasil pengujian, dan contoh implementasi 
 
 ### Demonstrasi Video Healenium Selenium
 
-[![Demo Healenium Selenium](Dokumentasi/Script-testing.png)](Dokumentasi/Demo-Healenium-Selenium.mp4)
+[![Demo Healenium Selenium](Dokumentasi/Script-testing.png)](https://drive.google.com/file/d/1V-rqbs8Ka3mcKyUp6O4bhXBAChsnuM4B/view?usp=drive_link)
 *Klik gambar untuk memutar video demonstrasi Healenium Selenium.*
 
 
