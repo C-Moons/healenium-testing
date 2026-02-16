@@ -80,17 +80,18 @@ Dokumentasi detail terkait penggunaan, hasil pengujian, dan contoh implementasi 
 
 ### Demonstrasi Video Healenium Selenium
 
-https://drive.google.com/file/d/1V-rqbs8Ka3mcKyUp6O4bhXBAChsnuM4B/view?usp=drive_link
+[![Demo Healenium Selenium](Dokumentasi/Script-testing.png)](Dokumentasi/Demo-Healenium-Selenium.mp4)
+*Klik gambar untuk memutar video demonstrasi Healenium Selenium.*
 
 
 ### Laporan Healing
-![Report Healing](Dokumentasi/Report Healing.png)
+![Report Healing](Dokumentasi/Report-Healing.png)
 
 ### Laporan Selector
-![Report Selectors](Dokumentasi/Report Selectors.png)
+![Report Selectors](Dokumentasi/Report-Selectors.png)
 
 ### Script Testing
-![Script Testing](Dokumentasi/Script testing.png)
+![Script Testing](Dokumentasi/Script-testing.png)
 
 Untuk informasi lebih lanjut tentang konfigurasi dan menjalankan pengujian, silakan lihat file `pom.xml` untuk dependensi Maven dan properti konfigurasi di `src/test/resources/`.
 
